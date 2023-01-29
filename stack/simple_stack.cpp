@@ -1,3 +1,25 @@
+/*
+Difficulty Easy
+Company Tag:
+Stack(Easy)
+You are given an array arr of size N. You need to push the elements of the array into a stack and then print them while popping.
+
+Input:
+1
+5
+1 2 3 4 5
+Output:
+1
+5
+5 4 3 2 1
+Input:
+ 7
+1 6 43 1 2 0 5
+Output:
+5 0 2 1 43 6 1
+
+*/
+
 #include <bits/stdc++.h>
 using namespace std;
 
