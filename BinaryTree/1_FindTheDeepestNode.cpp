@@ -1,3 +1,26 @@
+/*
+    Author: Sujit Kar
+    Date: 17/03/2023
+    Topic: Find the deepest Node in Binary Tree
+    Time Complexity: O(n)
+    Space Complexity: O(n)
+*/
+
+/*
+
+Discuss:
+
+We have find the deepest node in the Binary tree.
+
+what is the deepest node?
+=> Deepest node means last element present of "LevelOrderTraversal" in Binary Tree.
+
+steps to solve:
+1. first create a Queue.
+2. Using Level Order Traversal , enquing the trees element into the queue
+3. return the last element of the queue.
+*/
+
 #include <iostream>
 #include <queue>
 
