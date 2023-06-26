@@ -10,7 +10,7 @@
 
 Discuss:
 
-    *Leaf Node means which node has both left child and right child.
+    *Full Node means which node has both left child and right child.
 
     Steps to solve:
         1.Starting from root node,Using Level Order Traversal search for those nodes whose left and right node is not NULL;

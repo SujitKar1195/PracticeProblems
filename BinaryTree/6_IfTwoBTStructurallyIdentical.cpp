@@ -1,21 +1,16 @@
 /*
     Author: Sujit Kar
     Date: 26/06/2023
-    Topic: Count the number of Half nodes
+    Topic: Given two Binary Trees, return true if they are structurally identical.
     Time Complexity: O(n)
     Space Complexity: O(n)
 */
 
 /*
-
-Discuss:
-
-    *Half Node means which node has either left child or  right child.
-
-    Steps to solve:
-        1.Starting from root node,Using Level Order Traversal search for those nodes whose either left or right child exists.
-        2. Use Queue for storing nodes.
-
+Solution:
+    Algorithm:
+        1.If both trees are NULL then return true;
+        2.If both tree are not NULL, then compare data and check left and right subtree structures.
 */
 
 #include <iostream>
@@ -97,41 +92,32 @@ void levelorderTraversal(Node *p)
     cout << endl;
 }
 
-int countNumberOfLeafNodeInBTLevelOrder(Node *root)
+int areStructurallySameTrees(Node *root1, Node *root2)
 {
-    if (root == NULL)
-    {
+    if (!root1 && !root2)
+        return 1;
+    if (root1 == NULL || root2 == NULL)
         return 0;
-    }
-    int count = 0;
-    Node *temp = NULL;
-    queue<Node *> q;
-    q.push(root);
-    while (!q.empty())
-    {
-        temp = q.front();
-        q.pop();
-        if ((temp->left && !temp->right) || (!temp->left && temp->right))
-        {
-            count++;
-        }
-
-        if (temp->left)
-            q.push(temp->left);
-        if (temp->right)
-            q.push(temp->right);
-    }
-    return count;
+    return (root1->data == root2->data && areStructurallySameTrees(root1->left, root2->left) && areStructurallySameTrees(root1->right, root2->right));
 }
 int main()
 {
-    Node *root = createTree();
+    Node *root1 = createTree();
+    Node *root2 = createTree();
 
-    cout << "Trees Data:\n";
-    levelorderTraversal(root);
+    cout << "Tree1 Data:\n";
+    levelorderTraversal(root1);
 
-    int count = countNumberOfLeafNodeInBTLevelOrder(root);
-    cout << "Number of Half Nodes are: " << count << endl;
+    cout << "Tree2 Data:\n";
+    levelorderTraversal(root2);
 
+    if ((areStructurallySameTrees(root1, root2)))
+    {
+        cout << "Both Trees are structurally same.\n";
+    }
+    else
+    {
+        cout << "Not same.\n";
+    }
     return 0;
 }
