@@ -24,7 +24,7 @@ void create(int *a, int n)
 {
     first = new Node(a[0]);
     last = first;
-    int i = 1;
+    int i = 1;      
     while (i < n)
     {
         Node *temp = new Node(a[i]);
