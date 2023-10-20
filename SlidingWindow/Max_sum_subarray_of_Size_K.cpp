@@ -29,12 +29,12 @@ void calculate(int *a, int n, int k)
         else if (j - i + 1 == k)
         {
 
-            m = max(m,sum);
+            m = max(m, sum);
             sum = sum - a[i++];
-            j++;     
+            j++;
         }
     }
-    
+
     cout << m << endl;
 }
 
