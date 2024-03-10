@@ -38,6 +38,7 @@ void findLps(vector<int> &lps, string &s)
         {
             if (preIndex == 0)
             {
+                lps[sufIndex] = 0;
                 sufIndex++;
             }
             else
@@ -51,10 +52,12 @@ void findLps(vector<int> &lps, string &s)
 int main()
 {
     int t;
+    cout << "No of testcases: ";
     cin >> t;
     while (t--)
     {
         string s;
+        cout << "Enter string: ";
         cin >> s;
 
         vector<int> lps(s.size(), 0);
@@ -71,7 +74,7 @@ int main()
 
         cout << "And the string is: " << prefix << endl;
         cout << "Lps table: " << endl;
-        for (int i : lps)
+        for (int &i : lps)
         {
             cout << i << " ";
         }
