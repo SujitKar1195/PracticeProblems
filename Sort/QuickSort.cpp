@@ -18,12 +18,12 @@ int partition(vector<int> &arr, int start, int end)
 
 void quickSort(vector<int> &arr, int start, int end)
 {
-	if (start == end)
-		return;
+  if (start >= end)
+    return;
 
-	int pivotIndex = partition(arr, start, end);
-	quickSort(arr, start, pivotIndex - 1);
-	quickSort(arr, pivotIndex + 1, end);
+  int pivotIndex = partition(arr, start, end);
+  quickSort(arr, start, pivotIndex - 1);
+  quickSort(arr, pivotIndex + 1, end);
 }
 
 int main()
